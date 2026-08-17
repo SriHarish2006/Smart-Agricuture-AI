@@ -275,27 +275,21 @@ Supported Classes
 
 # 📸 Screenshots
 
-## Dashboard
+### 🏠 Dashboard
 
-> Add screenshot here
+![Dashboard](screenshots/dashboard.png)
 
----
+### 🌿 Leaf Disease Detection
 
-## Weather Analysis
+![Disease Detection](screenshots/disease-detection.png)
 
-> Add screenshot here
+### 🌦️ Weather Analysis
 
----
+![Weather Analysis](screenshots/weather-analysis.png)
 
-## Disease Detection
+### 🤖 AI Agriculture Assistant
 
-> Add screenshot here
-
----
-
-## AI Chatbot
-
-> Add screenshot here
+![AI Assistant](screenshots/chatbot.png)
 
 ---
 
