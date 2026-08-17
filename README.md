@@ -340,8 +340,6 @@ git push origin feature-name
 
 💼 LinkedIn: https://www.linkedin.com/in/sri-harish-2b34a930a
 
-💻 GitHub: https://github.com/SriHarish2006
-
 ---
 
 # ⭐ Support
