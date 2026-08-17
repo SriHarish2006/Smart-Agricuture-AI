@@ -1,179 +1,357 @@
-<<<<<<< HEAD
-# 🌱 AI Smart Agriculture
+# 🌱 Smart Agriculture AI
 
-An AI-powered web application for farmers with three modules:
+An intelligent AI-powered agriculture platform that helps farmers make informed decisions through **leaf disease detection, weather analysis, crop insights, and an AI assistant**. The application combines **Deep Learning, FastAPI, React, and TensorFlow** to provide a modern and user-friendly farming solution.
 
-1. **🌦️ Weather Analysis** — real weather data plus a rule-based farming recommendation (irrigation / spraying advice) generated from that data.
-2. **🌿 AI Leaf Disease Detection** — upload a leaf photo and get a prediction from a real, trained EfficientNetB0 image-classification model, with symptoms and recommended actions.
-3. **🤖 Agriculture Chatbot** — predefined question-and-answer knowledge base (30+ Q&A) covering rice, tomato, potato, wheat, maize, and general agriculture topics, plus a free-text question box that only answers from the knowledge base.
-
-Built as a final-year Computer Science engineering project / portfolio piece.
+![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)
+![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?style=for-the-badge&logo=fastapi)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.17-FF6F00?style=for-the-badge&logo=tensorflow)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 ---
 
-## Features
+## 📌 Overview
 
-- Weather lookup by location + crop, with temperature, humidity, rainfall, wind, cloud cover, rain probability, and a 5-day forecast
-- AI farming recommendations generated from actual weather data (not canned text) — irrigation and spraying guidance
-- Leaf image upload (drag-and-drop or click), with crop selection, image preview, and re-upload flow
-- Real CNN-based disease classification (EfficientNetB0 transfer learning) with a confidence score and a low-confidence warning when the model isn't sure
-- Predefined agriculture chatbot with crop-specific question lists and category grouping, plus free-text Q&A matched against the same knowledge base
-- History of weather analyses, leaf analyses, and chatbot interactions, stored in SQLite, with a "Clear History" action that requires confirmation
-- Friendly error handling throughout — no raw stack traces or fake AI results are ever shown
+Smart Agriculture AI is a full-stack web application designed to support precision agriculture using Artificial Intelligence.
 
-## Technology Stack
+The platform enables users to:
 
-**Frontend:** React, TypeScript, Vite, Tailwind CSS, React Router, Axios, Recharts, lucide-react
-**Backend:** Python, FastAPI, Pydantic, Uvicorn
-**AI/ML:** TensorFlow/Keras (EfficientNetB0 transfer learning), Pillow, NumPy, scikit-learn
-**Database:** SQLite via SQLAlchemy
+- 🌿 Detect plant diseases from leaf images
+- ☀️ Analyze real-time weather conditions
+- 🌾 View crop-specific recommendations
+- 🤖 Interact with an AI agriculture assistant
+- 📊 Monitor agricultural insights through a clean dashboard
 
-## Architecture
+---
+
+## ✨ Features
+
+### 🌿 AI Leaf Disease Detection
+
+- Upload a crop leaf image
+- CNN model built using TensorFlow (EfficientNetB0)
+- Confidence score prediction
+- Disease diagnosis
+- Treatment recommendations
+
+Supported Crops
+
+- 🍅 Tomato
+- 🥔 Potato
+- 🫑 Bell Pepper
+
+---
+
+### 🌦 Weather Analysis
+
+- Real-time weather information
+- Temperature
+- Humidity
+- Wind Speed
+- Rain Prediction
+- Farming recommendations based on weather
+
+Powered by OpenWeather API.
+
+---
+
+### 🤖 AI Agriculture Assistant
+
+Chatbot capable of answering questions about:
+
+- Crop diseases
+- Fertilizers
+- Irrigation
+- Soil management
+- Pest control
+- Farming best practices
+
+---
+
+### 📊 Dashboard
+
+Interactive dashboard displaying:
+
+- Crop statistics
+- Disease analysis
+- Weather summary
+- Prediction history
+
+---
+
+## 🏗 System Architecture
+
+```text
+                 React + TypeScript
+                        │
+                        ▼
+                FastAPI REST API
+         ┌──────────┼───────────┐
+         ▼          ▼           ▼
+   TensorFlow   OpenWeather   SQLite
+      Model         API       Database
+```
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Axios
+
+## Backend
+
+- FastAPI
+- Python
+- SQLAlchemy
+- Pydantic
+- Uvicorn
+
+## Machine Learning
+
+- TensorFlow
+- EfficientNetB0
+- NumPy
+- Scikit-learn
+- Pillow
+
+## Database
+
+- SQLite
+
+## APIs
+
+- OpenWeather API
+
+---
+
+# 📂 Project Structure
 
 ```
-Frontend (React/Vite, :5173)
-        │  REST (JSON / multipart)
-        ▼
-Backend (FastAPI, :8000)
-   ├── /api/weather   → weather_service.py → OpenWeatherMap
-   ├── /api/disease    → disease_service.py → ml/disease_model.py (EfficientNetB0)
-   ├── /api/chatbot    → chatbot_service.py → data/chatbot_qa.json
-   └── /api/history     → SQLite (SQLAlchemy)
-```
-
-## Project Structure
-
-```
-ai-smart-agriculture/
-├── frontend/            React + TypeScript + Vite + Tailwind app
-├── backend/              FastAPI app, services, ML inference, training script
-├── data/                  chatbot_qa.json, disease_classes.json
-├── models/               trained model + class map (produced by training, not committed)
+Smart Agriculture AI/
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   └── package.json
+│
+├── backend/
+│   ├── app/
+│   ├── ml/
+│   ├── models/
+│   ├── requirements.txt
+│   └── .env.example
+│
+├── PlantVillage/
+│
 └── README.md
 ```
 
-See `backend/app/main.py` for the FastAPI entrypoint and `frontend/src/App.tsx` for the React routes.
+---
 
-## Installation
+# 🚀 Installation
 
-### Backend Setup (Windows / VS Code)
+## 1. Clone Repository
 
+```bash
+git clone https://github.com/yourusername/smart-agriculture-ai.git
+cd smart-agriculture-ai
 ```
-cd backend
-python -m venv venv
-venv\Scripts\activate
-pip install -r requirements.txt
-copy .env.example .env
-```
-
-Edit `backend/.env` and set your `WEATHER_API_KEY` (see below).
-
-```
-uvicorn app.main:app --reload
-```
-
-Backend runs at http://localhost:8000. API docs at http://localhost:8000/api/docs (Swagger) and http://localhost:8000/api/redoc.
-
-### Frontend Setup
-
-```
-cd frontend
-npm install
-copy .env.example .env
-npm run dev
-```
-
-Frontend runs at http://localhost:5173.
-
-## Environment Variables
-
-**backend/.env** (see `backend/.env.example`):
-
-| Variable | Description |
-|---|---|
-| `WEATHER_API_KEY` | Your OpenWeatherMap API key (never hard-coded, never exposed to the frontend) |
-| `CORS_ORIGINS` | Comma-separated allowed frontend origins (default `http://localhost:5173`) |
-| `DATABASE_URL` | SQLite connection string |
-| `DISEASE_CONFIDENCE_THRESHOLD` | Minimum confidence (0–1) before a prediction is flagged low-confidence |
-
-**frontend/.env** (see `frontend/.env.example`):
-
-| Variable | Description |
-|---|---|
-| `VITE_API_URL` | Backend base URL (default `http://localhost:8000`) |
-
-## Weather API Setup
-
-1. Create a free account at https://openweathermap.org/api
-2. Generate an API key
-3. Put it in `backend/.env` as `WEATHER_API_KEY=...`
-4. Never commit `.env` — it's already in `.gitignore`
-
-## Dataset & Model Training
-
-The leaf disease model is **not included** in this repository (trained model
-weights are large binary files and are excluded via `.gitignore`). To train it:
-
-1. Obtain a labeled leaf-image dataset such as [PlantVillage](https://www.kaggle.com/datasets/emmarex/plantdisease), organized as one subfolder per class (see `backend/ml/train_model.py` for the expected layout).
-2. Run (Windows example, matching a PlantVillage folder under `Downloads\Smart Agriculture AI\PlantVillage`):
-
-   ```
-   cd backend
-   venv\Scripts\activate
-   python ml\train_model.py --data-dir "%USERPROFILE%\Downloads\Smart Agriculture AI\PlantVillage" --epochs 10
-   ```
-
-   (macOS/Linux: `python ml/train_model.py --data-dir /path/to/PlantVillage --epochs 10`)
-
-3. This produces `models/leaf_disease_model.keras`, `models/class_names.json`, and `models/training_metrics.json` (with the actual validation accuracy/loss achieved — nothing fabricated).
-
-`data/disease_classes.json` already ships with metadata (crop, symptoms, recommended actions) for the standard 15-class PlantVillage subset — Tomato (10 classes), Potato (3 classes), and Pepper Bell (2 classes) — so if your dataset uses those exact folder names, no further edits are needed. If you use a different or larger dataset, add/update entries in `data/disease_classes.json` keyed by the exact class folder name.
-
-**Until the model is trained, the `/api/disease/predict` endpoint returns a clear,
-explicit "model not available" error with training instructions — it never
-fabricates a disease name or confidence score.**
-
-## Running the Application
-
-Start the backend first, then the frontend (see Installation above). Open
-http://localhost:5173 in your browser.
-
-## API Endpoints
-
-| Method | Path | Description |
-|---|---|---|
-| GET | `/api/health` | Health check |
-| POST | `/api/weather/analyze` | Analyze weather + get a farming recommendation |
-| POST | `/api/disease/predict` | Predict leaf disease from an uploaded image |
-| GET | `/api/chatbot/questions` | List predefined questions (optional `?crop=`) |
-| GET | `/api/chatbot/crops` | List crops with predefined questions |
-| POST | `/api/chatbot/ask` | Ask a predefined or free-text agriculture question |
-| GET | `/api/history/weather` | Weather analysis history |
-| GET | `/api/history/disease` | Leaf disease analysis history |
-| GET | `/api/history/chat` | Chatbot interaction history |
-| DELETE | `/api/history/clear` | Clear all history |
-
-Full interactive docs at `/api/docs` and `/api/redoc` once the backend is running.
-
-## Limitations
-
-- The leaf disease model must be trained by the user; a pre-trained model is not bundled with this repository.
-- Weather forecasting accuracy depends entirely on the underlying weather API (OpenWeatherMap) and is not guaranteed.
-- The chatbot only answers questions present in `data/chatbot_qa.json` — it does not use a general-purpose language model and will say so when it doesn't have a verified answer.
-- No user authentication is implemented; history is stored per-server-instance in a local SQLite database rather than per-user account.
-- Uploaded leaf images are processed in-memory and are not stored permanently.
-
-## Future Improvements
-
-- User accounts and per-user history
-- Expand the trained model to more crops/diseases as labeled data becomes available
-- Push notifications / alerts for adverse weather
-- Offline-first support for low-connectivity rural areas
-- Multi-language support for the chatbot and UI
 
 ---
 
-Built following an "no fake AI results, no fabricated data" development discipline: every prediction, weather value, and chatbot answer shown to the user is either retrieved from a real API/model or comes from an explicit knowledge base — nothing is randomly generated or invented.
-=======
-# Smart-Agriculture-Ai
->>>>>>> 93668cd09c41e1605fc17c65e6e520b3aa2a81ba
+## 2. Backend Setup
+
+```bash
+cd backend
+
+python -m venv venv
+
+# Windows
+venv\Scripts\activate
+
+# Linux / macOS
+source venv/bin/activate
+
+pip install -r requirements.txt
+```
+
+---
+
+## 3. Configure Environment Variables
+
+Create `.env`
+
+```env
+WEATHER_API_KEY=YOUR_API_KEY
+CORS_ORIGINS=http://localhost:5173
+DATABASE_URL=sqlite:///./agriculture.db
+DISEASE_CONFIDENCE_THRESHOLD=0.60
+```
+
+---
+
+## 4. Train the AI Model
+
+```bash
+python ml/train_model.py --data-dir "/path/to/PlantVillage" --epochs 10
+```
+
+---
+
+## 5. Start Backend
+
+```bash
+uvicorn app.main:app --reload
+```
+
+Backend:
+
+```
+http://localhost:8000
+```
+
+Swagger API:
+
+```
+http://localhost:8000/api/docs
+```
+
+---
+
+## 6. Frontend Setup
+
+```bash
+cd frontend
+
+npm install
+
+npm run dev
+```
+
+Frontend:
+
+```
+http://localhost:5173
+```
+
+---
+
+# 🧠 Machine Learning Model
+
+Model Architecture:
+
+- EfficientNetB0
+- Transfer Learning
+- TensorFlow 2.17
+- Image Size: 224×224
+
+Dataset:
+
+**PlantVillage Dataset**
+
+Supported Classes
+
+- Tomato Early Blight
+- Tomato Late Blight
+- Tomato Leaf Mold
+- Tomato Mosaic Virus
+- Tomato Septoria Leaf Spot
+- Tomato Target Spot
+- Tomato Yellow Leaf Curl Virus
+- Tomato Healthy
+- Potato Early Blight
+- Potato Late Blight
+- Potato Healthy
+- Pepper Bell Bacterial Spot
+- Pepper Bell Healthy
+
+---
+
+# 📸 Screenshots
+
+## Dashboard
+
+> Add screenshot here
+
+---
+
+## Weather Analysis
+
+> Add screenshot here
+
+---
+
+## Disease Detection
+
+> Add screenshot here
+
+---
+
+## AI Chatbot
+
+> Add screenshot here
+
+---
+
+# 🔮 Future Enhancements
+
+- 🌍 Multi-language support
+- 📱 Mobile Application
+- ☁ Cloud Deployment
+- 🌱 Soil Health Prediction
+- 📈 Crop Yield Prediction
+- 🌾 Fertilizer Recommendation System
+- 🛰 Satellite Image Analysis
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+1. Fork the repository
+2. Create a new branch
+
+```
+git checkout -b feature-name
+```
+
+3. Commit changes
+
+```
+git commit -m "Add new feature"
+```
+
+4. Push
+
+```
+git push origin feature-name
+```
+
+5. Open a Pull Request
+
+---
+
+# 👨‍💻 Author
+
+**Sri Harish**
+
+📧 Email: harishsri632@gmail.com
+
+💼 LinkedIn: https://www.linkedin.com/in/sri-harish-2b34a930a
+
+💻 GitHub: https://github.com/SriHarish2006
+
+---
+
+# ⭐ Support
+
+If you found this project useful, please consider giving it a **⭐ Star** on GitHub.
+
+It helps support the project and encourages future development.
