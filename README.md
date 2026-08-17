@@ -273,15 +273,15 @@ Supported Classes
 
 ---
 
-# 📸 Screenshots
+## 📸 Application Screenshots
 
 ### 🏠 Dashboard
 
-![Dashboard](screenshots/dashboard.png)
+![Smart Agriculture AI Dashboard](screenshots/dashboard.png)
 
 ### 🌿 Leaf Disease Detection
 
-![Disease Detection](screenshots/disease-detection.png)
+![Leaf Disease Detection](screenshots/disease-detection.png)
 
 ### 🌦️ Weather Analysis
 
@@ -289,7 +289,7 @@ Supported Classes
 
 ### 🤖 AI Agriculture Assistant
 
-![AI Assistant](screenshots/chatbot.png)
+![AI Agriculture Assistant](screenshots/chatbot.png)
 
 ---
 
