@@ -275,16 +275,6 @@ Supported Classes
 
 ## 📸 Application Screenshots
 
-<p align="center">
-  <img src="screenshots/dashboard.png" width="48%" />
-  <img src="screenshots/disease-detection.png" width="48%" />
-</p>
-
-<p align="center">
-  <img src="screenshots/weather-analysis.png" width="48%" />
-  <img src="screenshots/chatbot.png" width="48%" />
-</p>
-
 ### 🏠 Dashboard
 
 ![Smart Agriculture AI Dashboard](screenshots/dashboard.png)
