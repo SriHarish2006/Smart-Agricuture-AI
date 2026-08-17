@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🌱 AI Smart Agriculture
 
 An AI-powered web application for farmers with three modules:
@@ -173,3 +174,6 @@ Full interactive docs at `/api/docs` and `/api/redoc` once the backend is runnin
 ---
 
 Built following an "no fake AI results, no fabricated data" development discipline: every prediction, weather value, and chatbot answer shown to the user is either retrieved from a real API/model or comes from an explicit knowledge base — nothing is randomly generated or invented.
+=======
+# Smart-Agriculture-Ai
+>>>>>>> 93668cd09c41e1605fc17c65e6e520b3aa2a81ba
