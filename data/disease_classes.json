@@ -1,0 +1,182 @@
+{
+  "0": {
+    "name": "Pepper_bell___Bacterial_spot",
+    "crop": "Pepper (Bell)",
+    "symptoms": "Small, water-soaked, dark spots appear on leaves, often with a yellow halo, and may merge into larger irregular lesions. Spots can also appear on fruit.",
+    "recommended_actions": [
+      "Remove and destroy severely affected leaves",
+      "Avoid overhead watering and working in fields when leaves are wet",
+      "Ensure good spacing between plants for airflow",
+      "Rotate crops in future seasons",
+      "Follow locally approved plant-protection guidance"
+    ],
+    "display_name": "Bacterial Spot"
+  },
+  "1": {
+    "name": "Pepper_bell___healthy",
+    "crop": "Pepper (Bell)",
+    "symptoms": "No visible disease symptoms detected.",
+    "recommended_actions": [
+      "Continue regular monitoring",
+      "Maintain a balanced watering and fertilizing schedule",
+      "Inspect leaves periodically for early signs of pests or disease"
+    ],
+    "display_name": "Healthy"
+  },
+  "2": {
+    "name": "Potato___Early_blight",
+    "crop": "Potato",
+    "symptoms": "Dark brown spots with concentric rings appear, typically on older leaves first.",
+    "recommended_actions": [
+      "Remove affected foliage where practical",
+      "Rotate crops in future seasons to reduce soil-borne spread",
+      "Avoid excess nitrogen fertilization",
+      "Follow locally approved plant-protection guidance"
+    ],
+    "display_name": "Early Blight"
+  },
+  "3": {
+    "name": "Potato___Late_blight",
+    "crop": "Potato",
+    "symptoms": "Dark, water-soaked lesions spread rapidly on leaves and stems, especially in cool, wet weather.",
+    "recommended_actions": [
+      "Remove and destroy infected plants promptly to limit spread",
+      "Avoid overhead irrigation",
+      "Ensure good field drainage and airflow",
+      "Follow locally approved plant-protection guidance urgently"
+    ],
+    "display_name": "Late Blight"
+  },
+  "4": {
+    "name": "Potato___healthy",
+    "crop": "Potato",
+    "symptoms": "No visible disease symptoms detected.",
+    "recommended_actions": [
+      "Continue regular field monitoring",
+      "Maintain proper spacing and drainage",
+      "Rotate crops each season for long-term soil health"
+    ],
+    "display_name": "Healthy"
+  },
+  "5": {
+    "name": "Tomato_Bacterial_spot",
+    "crop": "Tomato",
+    "symptoms": "Small, dark, water-soaked spots appear on leaves and may also affect stems and fruit, sometimes with a yellow halo.",
+    "recommended_actions": [
+      "Remove severely affected leaves",
+      "Avoid overhead watering and working with wet plants",
+      "Improve air circulation around plants",
+      "Follow locally approved plant-protection guidance"
+    ],
+    "display_name": "Bacterial Spot"
+  },
+  "6": {
+    "name": "Tomato_Early_blight",
+    "crop": "Tomato",
+    "symptoms": "Brown or dark concentric-ring lesions may appear on the lower/older leaves first.",
+    "recommended_actions": [
+      "Remove severely affected leaves",
+      "Improve air circulation around plants",
+      "Avoid excessive leaf wetness by watering at the base",
+      "Monitor nearby plants for spread",
+      "Follow locally approved plant-protection guidance"
+    ],
+    "display_name": "Early Blight"
+  },
+  "7": {
+    "name": "Tomato_Late_blight",
+    "crop": "Tomato",
+    "symptoms": "Water-soaked, dark green to brown patches spread quickly on leaves, often with a pale green border.",
+    "recommended_actions": [
+      "Remove and destroy infected plant material promptly",
+      "Avoid overhead watering, especially in the evening",
+      "Ensure good spacing and airflow between plants",
+      "Act quickly, as this disease can spread rapidly in humid conditions",
+      "Follow locally approved plant-protection guidance"
+    ],
+    "display_name": "Late Blight"
+  },
+  "8": {
+    "name": "Tomato_Leaf_Mold",
+    "crop": "Tomato",
+    "symptoms": "Pale green or yellow spots appear on the upper leaf surface, with an olive-green to grayish mold visible on the underside, usually in humid conditions.",
+    "recommended_actions": [
+      "Improve ventilation and reduce humidity around plants",
+      "Avoid overhead watering",
+      "Remove and destroy affected leaves",
+      "Follow locally approved plant-protection guidance"
+    ],
+    "display_name": "Leaf Mold"
+  },
+  "9": {
+    "name": "Tomato_Septoria_leaf_spot",
+    "crop": "Tomato",
+    "symptoms": "Small, circular spots with dark borders and light gray centers appear, usually starting on lower leaves.",
+    "recommended_actions": [
+      "Remove and destroy affected lower leaves",
+      "Avoid overhead watering",
+      "Improve air circulation around plants",
+      "Follow locally approved plant-protection guidance"
+    ],
+    "display_name": "Septoria Leaf Spot"
+  },
+  "10": {
+    "name": "Tomato_Spider_mites_Two_spotted_spider_mite",
+    "crop": "Tomato",
+    "symptoms": "Fine yellow speckling or stippling appears on leaves, sometimes with fine webbing visible on the underside in heavy infestations.",
+    "recommended_actions": [
+      "Inspect the underside of leaves closely for tiny mites",
+      "Increase humidity around plants where practical, as mites favor hot, dry conditions",
+      "Encourage natural predators where possible",
+      "Follow locally approved pest management guidance for severe infestations"
+    ],
+    "display_name": "Two-Spotted Spider Mite"
+  },
+  "11": {
+    "name": "Tomato__Target_Spot",
+    "crop": "Tomato",
+    "symptoms": "Brown lesions with concentric rings (target-like pattern) appear on leaves and can also affect stems and fruit.",
+    "recommended_actions": [
+      "Remove severely affected leaves",
+      "Improve air circulation and reduce leaf wetness",
+      "Monitor nearby plants for spread",
+      "Follow locally approved plant-protection guidance"
+    ],
+    "display_name": "Target Spot"
+  },
+  "12": {
+    "name": "Tomato__Tomato_YellowLeaf__Curl_Virus",
+    "crop": "Tomato",
+    "symptoms": "Leaves become small, curled upward, and yellow, often with stunted overall plant growth. Commonly spread by whiteflies.",
+    "recommended_actions": [
+      "Remove and destroy severely infected plants to reduce spread",
+      "Manage whitefly populations, as they transmit this virus",
+      "Avoid working between healthy and infected plants without cleaning tools",
+      "Follow locally approved pest and disease management guidance"
+    ],
+    "display_name": "Yellow Leaf Curl Virus"
+  },
+  "13": {
+    "name": "Tomato__Tomato_mosaic_virus",
+    "crop": "Tomato",
+    "symptoms": "Leaves show a mottled light and dark green mosaic pattern, and may be misshapen or slightly curled, with possible stunted growth.",
+    "recommended_actions": [
+      "Remove and destroy severely infected plants",
+      "Wash hands and disinfect tools between handling plants",
+      "Avoid tobacco use near plants, as the virus can spread via contact",
+      "Follow locally approved plant-protection guidance"
+    ],
+    "display_name": "Mosaic Virus"
+  },
+  "14": {
+    "name": "Tomato_healthy",
+    "crop": "Tomato",
+    "symptoms": "No visible disease symptoms detected.",
+    "recommended_actions": [
+      "Continue regular monitoring",
+      "Maintain consistent watering and balanced fertilization",
+      "Check both sides of leaves periodically for pests"
+    ],
+    "display_name": "Healthy"
+  }
+}
